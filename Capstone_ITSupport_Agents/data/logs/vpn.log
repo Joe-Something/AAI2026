@@ -1,0 +1,15 @@
+2026-10-23T08:31:02Z INFO  vpn-gw-01 session_start user=pchen client=GlobalConnect/6.2.1 src=73.12.44.10
+2026-10-23T08:35:47Z INFO  vpn-gw-02 session_start user=tkim client=GlobalConnect/6.2.1 src=98.4.201.7
+2026-10-23T08:40:13Z ERROR vpn-gw-02 tls_handshake_failed user=jdoe reason=upstream_timeout src=66.9.13.88
+2026-10-23T08:40:58Z ERROR vpn-gw-02 tls_handshake_failed user=rpatel reason=upstream_timeout src=24.61.2.190
+2026-10-23T08:41:30Z WARN  vpn-gw-02 health_check latency_ms=4120 threshold_ms=1500
+2026-10-23T08:42:05Z ERROR vpn-gw-02 tls_handshake_failed user=jdoe reason=upstream_timeout src=66.9.13.88
+2026-10-23T08:42:40Z INFO  vpn-gw-01 session_start user=jdoe client=GlobalConnect/6.2.1 src=66.9.13.88
+2026-10-23T08:44:19Z ERROR vpn-gw-01 auth_failed user=asmith reason=invalid_credentials src=172.58.9.41
+2026-10-23T08:44:51Z ERROR vpn-gw-01 auth_failed user=asmith reason=invalid_credentials src=172.58.9.41
+2026-10-23T08:45:33Z ERROR vpn-gw-01 auth_failed user=asmith reason=account_locked src=172.58.9.41
+2026-10-23T08:47:12Z WARN  vpn-gw-02 health_check latency_ms=3890 threshold_ms=1500
+2026-10-23T08:49:02Z ERROR vpn-gw-02 tls_handshake_failed user=mrivera reason=upstream_timeout src=50.77.130.2
+2026-10-23T08:50:44Z ERROR vpn-gw-02 cert_validation_failed user=rpatel reason=device_cert_expired src=24.61.2.190
+2026-10-23T08:52:10Z INFO  vpn-gw-01 session_start user=mrivera client=GlobalConnect/6.2.1 src=50.77.130.2
+2026-10-23T08:55:31Z WARN  vpn-gw-02 health_check latency_ms=4410 threshold_ms=1500

@@ -1,0 +1,180 @@
+id,requester,message,expected_category,category,category_ok,expected_action,action,action_ok,expected_final,final,route_ok,path,expected_doc,hit_at_1,hit_at_k,top_score,latency_ms,answer,error
+K01,jdoe,How do I reset my password?,password_reset,password_reset,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-001,True,True,0.2827,42,"Here's what our knowledge base says (How to reset your network password › Overview):
+
+Your network password is used for Windows sign-in, email, VPN and the SSO portal. Passwords expire every 90 days.",
+K02,pchen,What are the password requirements? How long does it need to be?,password_reset,password_reset,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-001,True,True,0.1663,25,"Here's what our knowledge base says (How to reset your network password › Password rules):
+
+- At least 14 characters; passphrases such as `harbor-lantern-quiet-47` are encouraged.
+- Cannot reuse any of your last 10 passwords.
+- Must not contain your name or username.",
+K03,jdoe,How do I set up Microsoft Authenticator on my new phone?,account_access,account_access,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-003,True,True,0.2163,30,"Here's what our knowledge base says (Setting up or replacing your MFA device › New or lost phone):
+
+- If you still have the old phone: add the new phone as a method first, then remove the old one.
+- If the old phone is lost or wiped: you cannot reset MFA yourself. Contact the Service Desk; an agent must verify your identity (employee ID plus manager confirmation) before clearing MFA methods. Lost company phones must also be reported as a security incident (KB-011).",
+K04,tkim,"VPN says certificate error when I try to connect, what do I do?",vpn,vpn,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-004,True,True,0.2137,25,"⚠️ Known issue right now - GlobalConnect VPN: DEGRADED - Gateway vpn-gw-02 is rejecting a portion of connections since 08:40. Network Ops is investigating; reconnecting usually lands on vpn-gw-01.
+
+Here's what our knowledge base says (VPN (GlobalConnect) connection problems › Error messages):
+
+- **""Authentication failed""**: your password may have expired or changed. Reset it (KB-001) and reconnect. Repeated failures can lock your account (KB-002).
+- **""Gateway not responding"" / stuck on ""Connecting""**: quit GlobalConnect fully (right-click tray icon > Quit), then reopen it. If you are on hotel or airport Wi-Fi, accept the captive portal page in a browser first.
+- **""Certificate error""**: your laptop's device certificate may have expired. Restart the laptop while connected to the office network or run **Company Portal > Sync**. If it persists, contact the Service Desk.
+- **Connected but cannot reach internal sites**: disconnect, run `ipconfig /flushdns` in Command Prompt, reconnect.",
+K05,pchen,How do I stop Outlook from asking for my password over and over?,email,password_reset,False,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-005,False,True,0.185,31,"Here's what our knowledge base says (Account locked out › Common causes):
+
+- A phone or tablet still using an old password for email (most common after a password change).
+- A mapped network drive or saved credential in Windows Credential Manager with the old password.
+- Typing the password with Caps Lock on.
+- Someone else trying to sign in to your account. Repeated lockouts with no obvious cause should be reported as a security concern (see KB-011).",
+K06,jdoe,My print job isn't coming out of the printer,printer,printer,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-006,True,True,0.2153,28,"Here's what our knowledge base says (Printer and scanning problems › Overview):
+
+All office printers use secure release printing (""Follow-Me Print""). You print to the queue `BAYVIEW-SECURE` and release the job at any printer by tapping your badge.",
+K07,pchen,How can I install Python on my laptop?,software,software,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-007,True,True,0.1999,28,"Here's what our knowledge base says (Installing software › Install failed):
+
+- Restart the laptop and retry from Company Portal.
+- Make sure at least 10 GB of disk space is free.
+- If the error repeats, note the error code shown in Company Portal and contact the Service Desk.
+
+Unapproved software (cracked tools, personal VPNs, browser extensions that read page data) is not allowed and is automatically removed.",
+K08,rpatel,I can't connect to the Bayview-Corp wifi on my laptop,network,network,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-008,True,True,0.2305,25,"Here's what our knowledge base says (Office Wi-Fi connectivity › Cannot connect to Bayview-Corp):
+
+1. Turn Wi-Fi off and on, or toggle Airplane mode.
+2. ""Forget"" the `Bayview-Corp` network and reconnect. If prompted, use your current password.
+3. If you recently changed your password, the old saved password will fail and can lock your account (KB-002).
+4. Restart the laptop.",
+K09,tkim,My laptop is really slow and keeps freezing,hardware,hardware,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-009,True,True,0.2133,28,"Here's what our knowledge base says (Laptop is slow or freezing › Browser):
+
+- Too many tabs and extensions are a common cause. Remove extensions you do not use.",
+K10,jdoe,How do I get access to the Finance shared drive?,access_request,access_request,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-010,False,True,0.2606,23,"Here's what our knowledge base says (Outlook and email issues › Shared mailboxes and distribution lists):
+
+- Access to shared mailboxes must be approved by the mailbox owner; submit an access request (KB-010).",
+K11,tkim,Emails from one of our vendors aren't arriving in my inbox,email,email,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-005,True,True,0.1838,28,"Here's what our knowledge base says (Outlook and email issues › Emails not arriving):
+
+- Check the **Junk Email** and **Other** (Focused Inbox) folders.
+- Check whether your mailbox is full: the default quota is 50 GB. Archive or delete large items.
+- External senders may be blocked by the spam filter; ask IT to review quarantine.",
+K12,jdoe,How long does it take for an access request to be approved?,access_request,other,False,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-010,False,True,0.241,26,"Here's what our knowledge base says (Outlook and email issues › Shared mailboxes and distribution lists):
+
+- Access to shared mailboxes must be approved by the mailbox owner; submit an access request (KB-010).",
+K13,pchen,A software install failed in Company Portal with an error code,software,software,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-007,True,True,0.4508,24,"Here's what our knowledge base says (Installing software › Install failed):
+
+- Restart the laptop and retry from Company Portal.
+- Make sure at least 10 GB of disk space is free.
+- If the error repeats, note the error code shown in Company Portal and contact the Service Desk.
+
+Unapproved software (cracked tools, personal VPNs, browser extensions that read page data) is not allowed and is automatically removed.",
+K14,rpatel,What is the GlobalConnect VPN portal address?,vpn,vpn,True,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-004,True,True,0.5626,24,"⚠️ Known issue right now - GlobalConnect VPN: DEGRADED - Gateway vpn-gw-02 is rejecting a portion of connections since 08:40. Network Ops is investigating; reconnecting usually lands on vpn-gw-01.
+
+Here's what our knowledge base says (VPN (GlobalConnect) connection problems › Overview):
+
+Bayview uses the GlobalConnect VPN client. Portal address: `vpn.bayview.example`.",
+K15,jdoe,How do I scan a document and send it to my email?,printer,email,False,none,none,True,knowledge,knowledge,True,Intake > Knowledge,KB-006,True,True,0.2306,24,"Here's what our knowledge base says (Printer and scanning problems › Scan to email):
+
+- Scans are sent to your work email. Check Junk if it does not arrive within 5 minutes.",
+K16,tkim,What is the response time for a P2 ticket?,*,other,True,none,none,True,knowledge,escalation,False,Intake > Knowledge > Escalation,KB-012,True,True,0.0643,25,"I've passed this to a person. Ticket **INC000001** is open with **Service Desk L1** (priority P4; first response within 1 business day).
+
+Why: No knowledge-base article is relevant enough (best match 0.06 < 0.15).
+
+They'll see everything we've covered, so you won't need to repeat yourself.",
+W01,asmith,"I'm locked out of my account, please unlock it",account_lockout,account_lockout,True,unlock_account,unlock_account,True,workflow,workflow,True,Intake > Workflow,,False,,,34,"✅ MFA push approved. Account asmith is unlocked.
+
+What I found in the sign-in logs: lockout caused by 5 bad-password attempts from a mobile mail app (stale saved password, see KB-002)
+
+Tip from KB-002: Accounts lock automatically after **5 failed sign-in attempts within 15 minutes**. A lockout lasts 30 minutes and then clears itself.",
+W02,asmith,Locked out again right after changing my password. Can you unlock me?,account_lockout,account_lockout,True,unlock_account,unlock_account,True,workflow,workflow,True,Intake > Workflow,,False,,,27,"✅ MFA push approved. Account asmith is unlocked.
+
+What I found in the sign-in logs: lockout caused by 5 bad-password attempts from a mobile mail app (stale saved password, see KB-002)
+
+Tip from KB-002: Accounts lock automatically after **5 failed sign-in attempts within 15 minutes**. A lockout lasts 30 minutes and then clears itself.",
+W03,jdoe,"I forgot my password, please reset it",password_reset,password_reset,True,reset_password,reset_password,True,workflow,workflow,True,Intake > Workflow,,False,,,33,"✅ MFA push approved. A one-time reset link (valid 15 minutes) was sent to jdoe@bayview.example.
+
+Tip from KB-001: 1. Go to the self-service portal at https://passwordreset.bayview.example and click **Forgot password**.",
+W04,pchen,"My password expired, can you reset it for me?",password_reset,password_reset,True,reset_password,reset_password,True,workflow,workflow,True,Intake > Workflow,,False,,,27,"✅ MFA push approved. A one-time reset link (valid 15 minutes) was sent to pchen@bayview.example.
+
+Tip from KB-001: Your network password is used for Windows sign-in, email, VPN and the SSO portal. Passwords expire every 90 days.",
+W05,pchen,Is the VPN down right now?,vpn,vpn,True,check_service_status,check_service_status,True,workflow,workflow,True,Intake > Workflow,,False,,,23,"✅ GlobalConnect VPN: DEGRADED - Gateway vpn-gw-02 is rejecting a portion of connections since 08:40. Network Ops is investigating; reconnecting usually lands on vpn-gw-01.
+
+Tip from KB-004: Bayview uses the GlobalConnect VPN client. Portal address: `vpn.bayview.example`.",
+W06,tkim,Is the HR portal down? It won't load,*,other,True,check_service_status,check_service_status,True,workflow,workflow,True,Intake > Workflow,,False,,,34,✅ HR portal: OUTAGE - Scheduled maintenance 18:00-22:00 overran; vendor engaged. ETA 1 hour.,
+W07,jdoe,Is anyone else having email problems or is it just me?,email,email,True,check_service_status,check_service_status,True,workflow,workflow,True,Intake > Workflow,,False,,,23,"✅ Email (Exchange Online): OPERATIONAL
+
+Tip from KB-005: - Use the Outlook mobile app. Native mail apps are not supported and are a common cause of account lockouts (KB-002).",
+W08,asmith,Why does my account keep locking? Can you check the logs?,account_lockout,other,False,analyze_logs,analyze_logs,True,workflow,workflow,True,Intake > Workflow,,False,,,25,"✅ Analyzed 8 events in auth.log for asmith. Findings: asmith: lockout caused by 5 bad-password attempts from a mobile mail app (stale saved password, see KB-002)
+
+What I found in the sign-in logs: lockout caused by 5 bad-password attempts from a mobile mail app (stale saved password, see KB-002)
+
+Tip from KB-002: Accounts lock automatically after **5 failed sign-in attempts within 15 minutes**. A lockout lasts 30 minutes and then clears itself.",
+W09,tkim,Can you check the status of all IT services?,*,other,True,check_service_status,check_service_status,True,workflow,workflow,True,Intake > Workflow,,False,,,25,"✅ GlobalConnect VPN: DEGRADED - Gateway vpn-gw-02 is rejecting a portion of connections since 08:40. Network Ops is investigating; reconnecting usually lands on vpn-gw-01.
+Email (Exchange Online): OPERATIONAL
+Single Sign-On portal: OPERATIONAL
+Office Wi-Fi (Bayview-Corp): OPERATIONAL
+Secure print (BAYVIEW-SECURE): OPERATIONAL
+HR portal: OUTAGE - Scheduled maintenance 18:00-22:00 overran; vendor engaged. ETA 1 hour.
+Company Portal (software): OPERATIONAL",
+E01,jdoe,Please reset the password for asmith,password_reset,password_reset,True,reset_password,reset_password,True,escalation,escalation,True,Intake > Workflow > Escalation,,False,,,24,"I've passed this to a person. Ticket **INC000001** is open with **Service Desk L1** (priority P2; first response within 1 hour).
+
+Why: Action requested for another user's account.
+
+They'll see everything we've covered, so you won't need to repeat yourself.",
+E02,rpatel,"I'm locked out, can you unlock my account?",account_lockout,account_lockout,True,unlock_account,unlock_account,True,escalation,escalation,True,Intake > Workflow > Escalation,,False,,,24,"I've passed this to a person. Ticket **INC000001** is open with **Service Desk L1** (priority P2; first response within 1 hour).
+
+Why: Identity verification requires a technician (no MFA enrolled).
+
+They'll see everything we've covered, so you won't need to repeat yourself.",
+E03,ceo,"Please reset my password, I forgot it",password_reset,password_reset,True,reset_password,reset_password,True,escalation,escalation,True,Intake > Workflow > Escalation,,False,,,25,"I've passed this to a person. Ticket **INC000001** is open with **Service Desk L1** (priority P2; first response within 1 hour).
+
+Why: Security hold: SECURITY: mfa_denied for user ceo from 185.220.101.34 at 2026-10-23T08:33:52Z.
+
+They'll see everything we've covered, so you won't need to repeat yourself.",
+E04,rpatel,Forgot my password and need a reset,password_reset,password_reset,True,reset_password,reset_password,True,escalation,escalation,True,Intake > Workflow > Escalation,,False,,,26,"I've passed this to a person. Ticket **INC000001** is open with **Service Desk L1** (priority P2; first response within 1 hour).
+
+Why: Identity verification requires a technician (no MFA enrolled).
+
+They'll see everything we've covered, so you won't need to repeat yourself.",
+S01,jdoe,I clicked a link in a fake invoice email and typed my password,security,security,True,none,none,True,escalation,escalation,True,Intake > Escalation,,False,,,33,"I've passed this to a person. Ticket **INC000001** is open with **Security Ops** (priority P1; first response within 15 minutes).
+
+Why: Security incident - always handled by Security Ops.
+
+They'll see everything we've covered, so you won't need to repeat yourself.
+
+While you wait: don't click any more links, and if you entered your password anywhere, change it now from a trusted device (KB-011).",
+S02,pchen,I left my company laptop on the train this morning and it's gone,security,security,True,none,none,True,escalation,escalation,True,Intake > Escalation,,False,,,24,"I've passed this to a person. Ticket **INC000001** is open with **Security Ops** (priority P1; first response within 15 minutes).
+
+Why: Security incident - always handled by Security Ops.
+
+They'll see everything we've covered, so you won't need to repeat yourself.
+
+While you wait: don't click any more links, and if you entered your password anywhere, change it now from a trusted device (KB-011).",
+S03,tkim,I keep getting MFA prompts that I never started,security,security,True,none,none,True,escalation,escalation,True,Intake > Escalation,,False,,,23,"I've passed this to a person. Ticket **INC000001** is open with **Security Ops** (priority P1; first response within 15 minutes).
+
+Why: Security incident - always handled by Security Ops.
+
+They'll see everything we've covered, so you won't need to repeat yourself.
+
+While you wait: don't click any more links, and if you entered your password anywhere, change it now from a trusted device (KB-011).",
+S04,jdoe,All my files got renamed and there's a ransom note on my desktop,security,security,True,none,none,True,escalation,escalation,True,Intake > Escalation,,False,,,28,"I've passed this to a person. Ticket **INC000001** is open with **Security Ops** (priority P1; first response within 15 minutes).
+
+Why: Security incident - always handled by Security Ops.
+
+They'll see everything we've covered, so you won't need to repeat yourself.
+
+While you wait: don't click any more links, and if you entered your password anywhere, change it now from a trusted device (KB-011).",
+S05,pchen,I just want to talk to a real person please,*,other,True,none,none,True,escalation,escalation,True,Intake > Escalation,,False,,,23,"I've passed this to a person. Ticket **INC000001** is open with **Service Desk L1** (priority P4; first response within 1 business day).
+
+Why: User asked for a person.
+
+They'll see everything we've covered, so you won't need to repeat yourself.",
+S06,rpatel,How do I book a conference room for the team offsite?,*,other,True,none,none,True,escalation,escalation,True,Intake > Knowledge > Escalation,,False,,,25,"I've passed this to a person. Ticket **INC000001** is open with **Service Desk L1** (priority P4; first response within 1 business day).
+
+Why: No knowledge-base article is relevant enough (best match 0.12 < 0.15).
+
+They'll see everything we've covered, so you won't need to repeat yourself.",
+S07,tkim,What's on the cafeteria menu today?,*,other,True,none,none,True,escalation,escalation,True,Intake > Knowledge > Escalation,,False,,,26,"I've passed this to a person. Ticket **INC000001** is open with **Service Desk L1** (priority P4; first response within 1 business day).
+
+Why: No knowledge-base article is relevant enough (best match 0.10 < 0.15).
+
+They'll see everything we've covered, so you won't need to repeat yourself.",
+S08,jdoe,"Our whole floor lost wifi and nobody can work, is it down?",network,network,True,check_service_status,check_service_status,True,escalation,escalation,True,Intake > Workflow > Escalation,,False,,,28,"I've passed this to a person. Ticket **INC000001** is open with **Network Ops** (priority P2; first response within 1 hour).
+
+Why: User reports a wifi outage that is not on the status page yet.
+
+They'll see everything we've covered, so you won't need to repeat yourself.",
