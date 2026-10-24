@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 790" width="1400" height="790" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+    <style>
+      .t{font-size:17px;font-weight:600;fill:#0f172a}
+      .s{font-size:12.5px;fill:#334155}
+      .lbl{font-size:12px;fill:#475569;font-style:italic}
+      .esc{font-size:12px;fill:#b45309;font-style:italic}
+      .line{stroke:#475569;stroke-width:1.8;fill:none}
+      .eline{stroke:#b45309;stroke-width:1.8;fill:none;stroke-dasharray:6 4}
+    </style>
+  </defs>
+  <rect width="1400" height="790" fill="#ffffff"/>
+
+  <!-- Channels -->
+  <rect x="480" y="20" width="340" height="90" rx="12" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="650" y="55" text-anchor="middle" class="t">Employee</text>
+  <text x="650" y="78" text-anchor="middle" class="s">Gradio web UI · CLI · (simulated SSO identity)</text>
+
+  <rect x="1040" y="20" width="340" height="90" rx="12" fill="#f5f3ff" stroke="#7c3aed"/>
+  <text x="1210" y="55" text-anchor="middle" class="t">Technician: VS Code + Copilot</text>
+  <text x="1210" y="78" text-anchor="middle" class="s">MCP client · also connected to GitHub MCP server</text>
+
+  <!-- Orchestrator -->
+  <rect x="290" y="140" width="720" height="610" rx="16" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8 5"/>
+  <text x="310" y="735" class="s" font-weight="600">LangGraph orchestrator · StateGraph over shared HelpdeskState (every agent appends to trace[])</text>
+
+  <!-- Agents -->
+  <rect x="505" y="190" width="290" height="100" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="650" y="220" text-anchor="middle" class="t">Intake Agent</text>
+  <text x="650" y="243" text-anchor="middle" class="s">PII redaction → Gemini structured output</text>
+  <text x="650" y="262" text-anchor="middle" class="s">category · action · urgency · entities</text>
+  <text x="650" y="280" text-anchor="middle" class="s">+ deterministic routing policy</text>
+
+  <rect x="320" y="370" width="280" height="110" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="460" y="400" text-anchor="middle" class="t">Knowledge Agent</text>
+  <text x="460" y="423" text-anchor="middle" class="s">RAG: embed query → Chroma top-4</text>
+  <text x="460" y="442" text-anchor="middle" class="s">relevance threshold · grounded answer</text>
+  <text x="460" y="461" text-anchor="middle" class="s">with citations · live outage banner</text>
+
+  <rect x="700" y="370" width="280" height="110" rx="12" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="840" y="400" text-anchor="middle" class="t">Workflow Agent</text>
+  <text x="840" y="423" text-anchor="middle" class="s">unlock · reset · status · log analysis</text>
+  <text x="840" y="442" text-anchor="middle" class="s">guardrails: self-only, MFA verified,</text>
+  <text x="840" y="461" text-anchor="middle" class="s">security hold from log signals</text>
+
+  <rect x="505" y="590" width="290" height="110" rx="12" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="650" y="620" text-anchor="middle" class="t">Escalation Agent</text>
+  <text x="650" y="643" text-anchor="middle" class="s">technician handoff summary (Gemini)</text>
+  <text x="650" y="662" text-anchor="middle" class="s">SLA triage → P1–P4 + queue</text>
+  <text x="650" y="681" text-anchor="middle" class="s">user told ticket # and response time</text>
+
+  <!-- Routing arrows -->
+  <path d="M650,110 L650,188" class="line" marker-end="url(#arr)"/>
+  <path d="M590,290 L470,368" class="line" marker-end="url(#arr)"/>
+  <text x="508" y="322" text-anchor="end" class="lbl">question</text>
+  <path d="M710,290 L830,368" class="line" marker-end="url(#arr)"/>
+  <text x="792" y="322" class="lbl">action</text>
+  <path d="M650,290 L650,588" class="line" marker-end="url(#arr)"/>
+  <rect x="598" y="500" width="104" height="36" fill="#f8fafc"/>
+  <text x="650" y="514" text-anchor="middle" class="lbl">security /</text>
+  <text x="650" y="530" text-anchor="middle" class="lbl">wants human</text>
+
+  <!-- Handoffs to escalation -->
+  <path d="M470,480 L585,588" class="eline" marker-end="url(#arrRed)"/>
+  <text x="508" y="548" text-anchor="end" class="esc">low relevance /</text>
+  <text x="508" y="564" text-anchor="end" class="esc">not grounded</text>
+  <path d="M830,480 L715,588" class="eline" marker-end="url(#arrRed)"/>
+  <text x="792" y="548" class="esc">refused · failed ·</text>
+  <text x="792" y="564" class="esc">security hold</text>
+
+  <!-- Left resources -->
+  <rect x="20" y="190" width="240" height="100" rx="12" fill="#eef2ff" stroke="#4f46e5"/>
+  <text x="140" y="220" text-anchor="middle" class="t">Gemini API</text>
+  <text x="140" y="243" text-anchor="middle" class="s">gemini-flash-latest (LLM)</text>
+  <text x="140" y="262" text-anchor="middle" class="s">gemini-embedding-2</text>
+  <text x="140" y="280" text-anchor="middle" class="s">key: secret GEMINI_API_KEY</text>
+  <path d="M260,240 L288,240" class="line" marker-end="url(#arr)"/>
+
+  <rect x="20" y="370" width="240" height="110" rx="12" fill="#ecfdf5" stroke="#059669"/>
+  <text x="140" y="400" text-anchor="middle" class="t">Chroma vector DB</text>
+  <text x="140" y="423" text-anchor="middle" class="s">12 KB articles → 51 section chunks</text>
+  <text x="140" y="442" text-anchor="middle" class="s">cosine similarity · content-hashed</text>
+  <text x="140" y="461" text-anchor="middle" class="s">re-index on KB change</text>
+  <path d="M318,425 L262,425" class="line" marker-start="url(#arr)" marker-end="url(#arr)"/>
+
+  <!-- Right resources -->
+  <rect x="1040" y="190" width="340" height="100" rx="12" fill="#f5f3ff" stroke="#7c3aed"/>
+  <text x="1210" y="220" text-anchor="middle" class="t">MCP server: bayview-helpdesk</text>
+  <text x="1210" y="243" text-anchor="middle" class="s">7 tools over stdio, auto-discovered</text>
+  <text x="1210" y="262" text-anchor="middle" class="s">ask_it_assistant · KB search · status</text>
+  <text x="1210" y="280" text-anchor="middle" class="s">logs · list / get / resolve tickets</text>
+  <path d="M1210,110 L1210,188" class="line" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <path d="M1038,240 L1012,240" class="line" marker-end="url(#arr)"/>
+
+  <rect x="1040" y="370" width="340" height="110" rx="12" fill="#fefce8" stroke="#a16207"/>
+  <text x="1210" y="400" text-anchor="middle" class="t">Enterprise systems (mock)</text>
+  <text x="1210" y="423" text-anchor="middle" class="s">Directory / identity provider</text>
+  <text x="1210" y="442" text-anchor="middle" class="s">Service status page</text>
+  <text x="1210" y="461" text-anchor="middle" class="s">VPN gateway + SSO auth logs</text>
+  <path d="M982,425 L1038,425" class="line" marker-start="url(#arr)" marker-end="url(#arr)"/>
+
+  <rect x="1040" y="590" width="340" height="110" rx="12" fill="#fff7ed" stroke="#c2410c"/>
+  <text x="1210" y="620" text-anchor="middle" class="t">Ticket system</text>
+  <text x="1210" y="643" text-anchor="middle" class="s">SQLite tickets (INC######), queues, SLA</text>
+  <text x="1210" y="662" text-anchor="middle" class="s">resolved-by-AI records for deflection KPI</text>
+  <text x="1210" y="681" text-anchor="middle" class="s">optional mirror → GitHub Issues</text>
+  <path d="M797,645 L1038,645" class="line" marker-end="url(#arr)"/>
+</svg>
